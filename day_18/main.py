@@ -1,60 +1,25 @@
+import turtle as t
 import random
-from turtle import Turtle, Screen
-
-tin = Turtle()
-tin.shape("turtle")
-tin.color("green")
-
-# for i in  range(4):
-#     tin.forward(100)
-#     tin.right(90)
 
 
-color = ["Orange","green","Red","Magenta","Teal"]
-def draw_shape(num_side):
-    angle = 360 / num_side
-    for i in range(num_side):
-        tin.forward(100)
-        tin.right(angle)
+tin = t.Turtle()
+t.colormode(255)
 
-for draw_shape_n in range(3,11):
-    tin.color(random.choice(color))
-    draw_shape(draw_shape_n)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
 
+directons = [0, 90, 180, 270]
+tin.pensize(10)
+tin.speed('fastest')
 
+for i in range(500):
+    tin.forward(30)
+    tin.color(random_color())
+    tin.setheading(random.choice(directons))
 
-
-
-for t1 in range(3):
-    tin.forward(100)
-    tin.right(120)
-    tin.color("Orange")
-for t2 in range(4):
-    tin.forward(100)
-    tin.right(90)
-    tin.color("green")
-for t3 in range(5):
-    tin.forward(100)
-    tin.right(72)
-    tin.color("Red")
-for t4 in range(6):
-    tin.forward(100)
-    tin.right(60)
-    tin.color("Magenta")
-for t5 in range(7):
-    tin.forward(100)
-    tin.right(51.5)
-    tin.color("Purple")
-for t6 in range(8):
-    tin.forward(100)
-    tin.right(45)
-    tin.color("Blue")
-for t7 in range(9):
-    tin.forward(100)
-    tin.right(40)
-    tin.color("Teal")
-
-
-
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
